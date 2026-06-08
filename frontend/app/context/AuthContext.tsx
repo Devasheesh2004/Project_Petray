@@ -19,8 +19,9 @@ interface AuthContextType {
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
-
+// We use relative /api path so Vercel proxies the requests to Render
+// This completely bypasses third-party cookie blocking!
+const API_BASE_URL = '/api';
 // Configure Axios default to automatically send cookies with every request
 axios.defaults.withCredentials = true;
 
