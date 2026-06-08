@@ -2,11 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   async rewrites() {
-    // Determine the backend URL. Fallback to localhost if not set.
-    // We strip any trailing '/api' because the destination already adds it.
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL 
-      ? process.env.NEXT_PUBLIC_API_URL.replace(/\/api\/?$/, '') 
-      : 'http://localhost:3001';
+    // Hardcoding the Render URL ensures Vercel knows exactly where to proxy,
+    // even if Vercel environment variables are missing or a redeploy was skipped!
+    const baseUrl = process.env.NODE_ENV === 'production' 
+      ? 'https://project-petray-backend.onrender.com'
+      : (process.env.NEXT_PUBLIC_API_URL 
+          ? process.env.NEXT_PUBLIC_API_URL.replace(/\/api\/?$/, '') 
+          : 'http://localhost:3001');
 
     return [
       {
