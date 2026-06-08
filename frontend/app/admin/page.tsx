@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { Users, MessageSquare, ArrowLeft, Loader2, ThumbsUp, ThumbsDown, LogOut } from 'lucide-react';
 import Link from 'next/link';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
+const API_BASE_URL = '/api';
 
 interface FeedbackItem {
     _id: string;

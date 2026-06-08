@@ -8,7 +8,7 @@ import { BotMessageSquare, AlertCircle, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import Link from 'next/link';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
+const API_BASE_URL = '/api';
 
 interface ConversationItem {
     _id: string;
