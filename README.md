@@ -2,6 +2,8 @@
 
 A full-stack, AI-powered customer support application utilizing Next.js for the frontend, Node.js/Express for the backend, and Google's Gemini LLM via LangChain for intelligent conversational capabilities.
 
+Live At - https://project-petray-frontend.vercel.app/
+
 
 ![alt text](image.png)
 
